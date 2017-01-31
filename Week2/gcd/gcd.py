@@ -1,16 +1,22 @@
 # Uses python3
 import sys
 
-def gcd_naive(a, b):
-    current_gcd = 1
-    for d in range(2, min(a, b) + 1):
-        if a % d == 0 and b % d == 0:
-            if d > current_gcd:
-                current_gcd = d
 
-    return current_gcd
+def gcd_euclid(a, b):
+
+    remainder = a % b
+
+    if b == 1 or remainder == 1:
+        return 1
+
+    elif remainder == 0:
+        return b
+
+    else:
+        gcd_euclid(b, remainder)
+
 
 if __name__ == "__main__":
     input = sys.stdin.read()
     a, b = map(int, input.split())
-    print(gcd_naive(a, b))
+    print(gcd_euclid(a, b))
