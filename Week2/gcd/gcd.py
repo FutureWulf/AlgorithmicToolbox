@@ -2,7 +2,10 @@
 def gcd_euclid(a, b):
     remainder = a % b
 
-    if (b == 1) or (remainder == 1):
+    if a == 1 and b == 1:
+        return 1
+
+    elif b == 1 or remainder == 1:
         return remainder
 
     elif remainder == 0:
