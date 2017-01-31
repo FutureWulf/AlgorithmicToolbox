@@ -20,6 +20,7 @@ numbers = [int(x) for x in input().split()]
 if numbers[0] < numbers[1]:
     a = numbers[1]
     b = numbers[0]
+
 else:
     a = numbers[0]
     b = numbers[1]
